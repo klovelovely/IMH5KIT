@@ -7,7 +7,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0;
+  padding: 2em 0;
 }
 
 body {
@@ -24,7 +24,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 
   /* Make the masthead heading the same height as the navigation */
