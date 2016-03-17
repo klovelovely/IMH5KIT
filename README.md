@@ -1,4 +1,4 @@
-# IM by taobao H5KIT
+# IM by taobao H5KIT & yeoman
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
