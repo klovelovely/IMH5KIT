@@ -17,19 +17,27 @@ angular
         'ngSanitize',
         'ngTouch',
         'ui.sortable',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'LocalStorageModule',
+        'angular-loading-bar'
     ])
+    .config(['localStorageServiceProvider', function(localStorageServiceProvider){
+        localStorageServiceProvider.setPrefix('ls');
+    }])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
-                controller : 'MainCtrl'
+                controller : 'MainCtrl',
+                activetab: 'index'
             })
             .when('/about', {
                 templateUrl: 'views/about.html',
-                controller : 'AboutCtrl'
+                controller : 'AboutCtrl',
+                activetab: 'about'
             })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/',
+                activetab: 'index'
             });
     });

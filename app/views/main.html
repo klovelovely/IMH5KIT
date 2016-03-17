@@ -3,39 +3,42 @@
     <div class="row">
         <div class="col-md-3">
 
-            <!-- 搜索/添加 -->
+            <!-- 搜索/添加用户 -->
             <form role="form" ng-submit="addTodo()">
-                <div class="row">
-                    <div class="input-group">
-                        <input type="text" ng-model="todo" placeholder="请输入用户的手机号" class="form-control">
-                        <span class="input-group-btn">
-                          <input type="submit" class="btn btn-primary" value="连接">
-                        </span>
-                    </div>
+                <div class="input-group input-group-lg">
+                    <input type="text" ng-model="todo" placeholder="请输入用户的手机号" class="form-control">
+                    <span class="input-group-btn">
+                      <input type="submit" class="btn btn-primary" value="连接">
+                    </span>
                 </div>
             </form>
 
             <hr>
 
+            <!-- 当前用户聊天列表 -->
             <uib-tabset active="activePill" vertical="true" type="pills">
-                <uib-tab index="0" heading="Vertical 1">Vertical content 1</uib-tab>
-                <uib-tab index="1" heading="Vertical 2">Vertical content 2</uib-tab>
+                <uib-tab ng-repeat="item in chat.list" select="switchCurrentChat($index)">
+                    <uib-tab-heading>
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span ng-bind="item.touname"></span>
+                    </uib-tab-heading>
+                </uib-tab>
             </uib-tabset>
 
             <hr>
 
             <!-- 列表 -->
-            <div class="input-group" ng-repeat="todo in todos">
-                <span ng-bind="todo" class="btn btn-primary"></span>
+            <!--<div class="input-group" ng-repeat="todo in todos">
+                <span ng-bind="todo" class="btn btn-primary">啊斯蒂芬</span>
                 <span class="input-group-btn">
                     <button class="btn btn-default" ng-click="removeTodo($index)" aria-label="Remove">X</button>
                 </span>
-            </div>
+            </div>-->
 
         </div>
         <div class="col-md-9">
 
-            <div id="J_IMContainer"></div>
+            <div id="J_IMContainer" class="IMContainer"></div>
 
         </div>
     </div>
